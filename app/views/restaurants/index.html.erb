@@ -1,2 +1,3 @@
-<h1>Restuarants#index</h1>
-<p>Find me in app/views/restuarants/index.html.erb</p>
+<h1>Seat Yourself</h1>
+<% @restaurants.each do |restaurant| %>
+	<p> <%= picture[:name] %>, <%= restaurant[:address] %>, <%= restaurant[:category] %>, <%= restaurant[:summary][0..30] %> </p> <% end %>

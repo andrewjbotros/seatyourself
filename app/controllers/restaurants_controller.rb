@@ -5,6 +5,11 @@ class RestaurantsController < ApplicationController
 
   def show
   	@restaurant = Restaurant.find(params[:id])
+
+    if current_guest
+      @reservation = @restaurant.reservations.build
+    end
+
   end
 
   def new

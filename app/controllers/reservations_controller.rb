@@ -1,5 +1,5 @@
 class ReservationsController < ApplicationController
-  before_filer :load_product
+  before_filter :load_restaurant
 
   def index
   end
@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
 
   def create
   	@reservation = @restaurant.reservations.build(reservation_params)
-  	@reservation.user_id = current_user.id
+  	@reservation.guest_id = current_guest.id
 
   	if @reservation.save
   		redirect_to restaurants_path, notice: 'Reservation created successfully'
@@ -37,7 +37,7 @@ class ReservationsController < ApplicationController
   end
 
   def load_restaurant
-    @restaurant = Restaurant.find(params[:restaurand_id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
 end

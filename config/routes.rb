@@ -1,6 +1,4 @@
 Seatyourself::Application.routes.draw do
-  get "guest/new"
-  get "guest/create"
   resources :restaurants
   resources :guests, :only => [:new, :create]
 

@@ -1,2 +1,8 @@
-<h1>Restuarants#show</h1>
-<p>Find me in app/views/restuarants/show.html.erb</p>
+<section style = "width: 50%; margin: 0 auto">
+	<%= @restaurant[:name] %></br>
+	<%= @restaurant[:address] %></br>
+	Category: <%= @restaurant[:category] %></br>
+	<div style="border-top: 2px solid black"> Summary: <%= @restaurant[:summary] %></div></br>
+</section>
+
+<%= link_to "Edit Restaurant", edit_restaurant_path %>

@@ -1,8 +1,11 @@
 <section style = "width: 50%; margin: 0 auto">
-	<%= @restaurant[:name] %></br>
+	<h1><%= @restaurant[:name] %></h1>
 	<%= @restaurant[:address] %></br>
 	Category: <%= @restaurant[:category] %></br>
 	<div style="border-top: 2px solid black"> Summary: <%= @restaurant[:summary] %></div></br>
 </section>
 
-<%= link_to "Edit Restaurant", edit_restaurant_path %>
+<div style = "width: 50%; margin: 0 auto">
+<%= link_to "Edit Restaurant", edit_restaurant_path %></br>
+<%= link_to "Back Restaurant", restaurants_path %>
+</div>

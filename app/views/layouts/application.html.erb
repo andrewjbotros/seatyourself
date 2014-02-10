@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Seatyourself</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -13,7 +13,8 @@
 
 	<div class="guestinfo">
 		<% if current_guest %>
-		Signed in as <%=  current_guest.email %>, <%= link_to "Log out", session_path("current"), :method => :delete %>
+		<img src="http://andrewjbotros.com/images/profile_picture2.png" style="height: 40px"/>
+		Signed in as <%=  current_guest.first_name %>, <%= link_to "Log out", session_path("current"), :method => :delete %>
 		<% else %>
 		<%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_guest_path %>
 		<% end %>

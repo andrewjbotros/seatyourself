@@ -1,6 +1,6 @@
 <h2>Reservations</h2>
-<button style = "margin-top: -30px"><%= link_to 'Back to Restaurants', restaurants_path %></button></br>
-<%= @reservations.each do |r| %>
+<button><%= link_to 'Back to Restaurants', restaurants_path %></button></br>
+<%= current_guest.reservations.each do |r| %>
 	<strong><%= r.restaurant.name %></strong></br>
 	<em><%= r.restaurant.address %></em></br>
 	<strong>Guest Name: </strong><%= r.guest.first_name %> <%= r.guest.last_name %></br>

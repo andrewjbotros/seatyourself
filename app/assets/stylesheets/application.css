@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
  */
+
+* {
+	text-decoration: none;
+}
+
+.guestinfo {
+	width: 60%;
+	margin: 0 auto;
+}

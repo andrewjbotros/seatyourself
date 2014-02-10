@@ -1,4 +1,6 @@
 class RestaurantsController < ApplicationController
+  before_filter :ensure_logged_in, :only => [:show]
+
   def index
   	@restaurants = Restaurant.all
   end
@@ -9,7 +11,6 @@ class RestaurantsController < ApplicationController
     if current_guest
       @reservation = @restaurant.reservations.build
     end
-
   end
 
   def new
@@ -48,7 +49,7 @@ class RestaurantsController < ApplicationController
 
   private
   def restaurant_params
-    params.require(:restaurant).permit(:name, :address, :category, :summary)
+    params.require(:restaurant).permit(:name, :address, :category, :summary, :url)
   end
 end
 

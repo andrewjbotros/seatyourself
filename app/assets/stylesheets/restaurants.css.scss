@@ -2,21 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.restaurant{
-	width: 50%;
-	margin: 0 auto
+.wrap {
+	width: 60%;
+	margin: 0 auto;
 }
 
 .border{
-	border-top: 2px solid black
+	border-top: 1px solid black;
+	margin: 5px 0;
+}
+
+.box{
+	border: 1px solid black;
+	padding: 5px;
+	margin: 15px 0;
+}
+
+.box:hover{
+	border-left: 4px solid red;
 }
 
 button{
-	background-color: #95FFFC;
 	text-align: center;
 	vertical-align: middle;
 }
 
-button:hover{
-	background-color: blue;
-}

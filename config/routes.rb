@@ -1,15 +1,14 @@
 Seatyourself::Application.routes.draw do
 
-  get "reservations/index"
-  get "reservations/show"
-  get "reservations/new"
-  get "reservations/edit"
-  resources :restaurants
   resources :guests, :only => [:new, :create]
   resources :sessions, :only => [:new, :create, :destroy]
 
   resources :restaurants do
-    resources :reservations, :except => [:index]
+    resources :reservations
+  end
+
+  resources :guests do
+    resources :reservations
   end
 
   root :to => 'restaurants#index'

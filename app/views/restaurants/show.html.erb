@@ -1,31 +1,31 @@
-<div class="restaurant">
+<div class="wrap">
+<h2><%= @restaurant[:name] %></h2>
+<button style="margin-top: -30px"> <%= link_to "Back to Restaurants", restaurants_path %></button>
+<button style="margin-top: -30px"> <%= link_to "Edit Restaurant", edit_restaurant_path %></button></br>
+
+
 	<section>
-		<h2><%= @restaurant[:name] %></h2>
-		<%= @restaurant[:address] %></br>
-		Category: <%= @restaurant[:category] %></br>
-		<div class="border"> Summary: <%= @restaurant[:summary] %></div></br>
+		<b>Address: </b><%= @restaurant[:address] %></br>
+		<b>Category: </b><%= @restaurant[:category] %></br>
+		<img src="<%= @restaurant[:url] %>"/>
+		<div class="border"> <b>Summary: </b><%= @restaurant[:summary] %></div>
 	</section>
 
-	<div>
-		<button><%= link_to "Edit Restaurant", edit_restaurant_path %></button></br>
-		<button><%= link_to "Back Restaurant", restaurants_path %></button>
-	</div>
-
 	<% if current_guest %>
-	<div class ="reservation">
-		<h3>Reservations</h3>
+		<em><h3>Make a Reservation</h3></em>
 		<%= form_for([@restaurant, @reservation]) do |f| %>
 		<div class="field">
-			<%= f.label "Reservation date" %></br>
+			<b><%= f.label "Date: " %></b>
 			<%= f.datetime_select :time, order: [:year, :month, :day] %>
 		</div>
 		<div class="field">
-			<%= f.label :number_of_guests %></br>
+			<b><%= f.label "Number of guests: " %></b>
 			<%= f.number_field :number_of_guests %>
 		</div>
+		<div class="border"></div>
 		<div class="actions">
 			<%= f.submit %>
-		</div>
+		</div></br>
 		<% end %>
 		<% end %>
-	</div>
+</div>
